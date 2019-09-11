@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     // add movies
-    const addForm = forms['add movie'];
+    const addForm = forms['add-movie'];
     addForm.addEventListener('submit', function(e){
         e.preventDefault();
 
@@ -44,21 +44,6 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
             list.style.display = "initial";
         }
-    });
-
-    // filter movies
-    const searchBar = forms['search-movies'].querySelector('input')
-    searchBar.addEventListener('keyup', (e) => {
-        const term = e.target.value.toLowerCase();
-        const books = list.getElementsByTagName('li');
-        Array.from(movies).forEach((movie) => {
-            const title = book.firstElementChild.textContent;
-            if(title.toLowerCase().indexOf(e.target.value) != -1){
-                movie.style.display = 'block';
-            } else {
-                movie.style.display = 'none';
-            }
-        });
     });
 
     // tabbed content
