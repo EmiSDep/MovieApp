@@ -21,18 +21,22 @@ document.addEventListener('DOMContentLoaded', function(){
     const li = document.createElement('li');
     const movieName = document.createElement('span');
     const deleteBtn = document.createElement('span');
+    const completeBtn = document.createElement('span');
 
     //add text content
     movieName.textContent = value;
     deleteBtn.textContent = 'delete';
+    completeBtn.textContent = 'complete';
 
     // add classes
     movieName.classList.add('name');
     deleteBtn.classList.add('delete');
+    completeBtn.classList.add('complete')
 
     // append to DOM
     li.appendChild(movieName);
     li.appendChild(deleteBtn);
+    li.appendChild(completeBtn);
     list.appendChild(li)
     });
 
