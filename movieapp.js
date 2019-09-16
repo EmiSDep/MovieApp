@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function(){
     addForm.addEventListener('submit', function(e){
         e.preventDefault();
 
+    
+
     // create elements
     const value = addForm.querySelector('input[type="text"]').value;
     const li = document.createElement('li');
