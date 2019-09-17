@@ -47,13 +47,11 @@ document.addEventListener('DOMContentLoaded', function(){
     movieName.classList.add('name');
     deleteBtn.classList.add('delete');
     completeBtn.classList.add('complete')
-
     
     li.appendChild(movieName);
     li.appendChild(deleteBtn);
     li.appendChild(completeBtn);
-    list.appendChild(li)
-    list2.appendChild(li)
+    list.appendChild(li);
     });
 
     
