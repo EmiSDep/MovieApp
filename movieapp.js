@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){
 
     const list = document.querySelector('#movie-list ul');
+    const list2 = document.querySelector('#completed-movies ul');
     const forms = document.forms;
-
-    //delete movies
+    
     list.addEventListener('click', (e) => {
         if(e.target.className == 'delete'){
             const li = e.target.parentElement;
@@ -11,38 +11,52 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-    // add movies
+    list.addEventListener('click', (e) => {
+        if(e.target.className == 'complete'){
+            const li = e.target.parentElement;
+            list2.parentNode.appendChild(li);
+        }
+    });
+
+    list2.addEventListener('click', (e) => {
+        if(e.target.className == 'delete'){
+            const li = e.target.parentElement;
+            li.parentNode.removeChild(li);
+        }
+    });
+    
     const addForm = forms['add-movie'];
     addForm.addEventListener('submit', function(e){
         e.preventDefault();
 
     
 
-    // create elements
+    
     const value = addForm.querySelector('input[type="text"]').value;
     const li = document.createElement('li');
     const movieName = document.createElement('span');
     const deleteBtn = document.createElement('span');
     const completeBtn = document.createElement('span');
 
-    //add text content
+    
     movieName.textContent = value;
     deleteBtn.textContent = 'delete';
     completeBtn.textContent = 'complete';
 
-    // add classes
+    
     movieName.classList.add('name');
     deleteBtn.classList.add('delete');
     completeBtn.classList.add('complete')
 
-    // append to DOM
+    
     li.appendChild(movieName);
     li.appendChild(deleteBtn);
     li.appendChild(completeBtn);
     list.appendChild(li)
+    list2.appendChild(li)
     });
 
-    // hide movies
+    
     const hideBox = document.querySelector('#hide');
     hideBox.addEventListener('change', function(e){
         if(hideBox.checked){
@@ -52,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-    // tabbed content
+    
     const tabs = document.querySelector('.tabs');
     const panels = document.querySelectorAll('panel');
     tabs.addEventListener('click', (e) => {
@@ -67,5 +81,4 @@ document.addEventListener('DOMContentLoaded', function(){
             });
         }
     });
-
 })
